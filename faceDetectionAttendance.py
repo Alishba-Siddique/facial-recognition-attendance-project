@@ -73,17 +73,29 @@ while True:
 
             face_names.append(name)
             if name in known_faces_names:
+                font = cv2.FONT_HERSHEY_SIMPLEX
+                bottomLeftCornerOfText = (10,100)
+                fontScale              = 1.5
+                fontColor              = (255,0,0)
+                thickness              = 3
+                lineType               = 2
+ 
+                cv2.putText(frame,name+' Present', 
+                    bottomLeftCornerOfText, 
+                    font, 
+                    fontScale,
+                    fontColor,
+                    thickness,
+                    lineType)
+            if name in known_faces_names:
                 students.remove(name)
                 print(students)
                 current_time = now.strftime("%H-%M-%S")
                 lswriter.writerow([name, current_time])
-    cv2.imshow("attence system", frame)
+    cv2.imshow("attendence system", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 video_capture.release() 
 cv2.destroyAllWindows()
 f.close()                  
-
-
-
