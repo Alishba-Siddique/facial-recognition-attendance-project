@@ -55,7 +55,10 @@ current_date = now.strftime("%Y-%m-%d")
 f = open(current_date+'.csv', 'w+', newline = '')
 lswriter = csv.writer(f)
 
-while True: 
+photos_taken = 0
+max_photos = 1  # Change this value to set the number of photos to be taken for attendance
+
+while photos_taken < max_photos:
     _,frame = video_capture.read()
     small_frame =cv2.resize(frame,(0,0),fx=0.25,fy=0.25)
     rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
@@ -92,10 +95,11 @@ while True:
                 print(students)
                 current_time = now.strftime("%H-%M-%S")
                 lswriter.writerow([name, current_time])
-    cv2.imshow("attendence system", frame)
+        photos_taken += 1  # Increment the count of photos taken
+    cv2.imshow("attendance system", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 video_capture.release() 
 cv2.destroyAllWindows()
-f.close()                  
+f.close()
