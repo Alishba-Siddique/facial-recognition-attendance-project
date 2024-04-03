@@ -6,6 +6,21 @@ from datetime import datetime
 
 video_capture = cv2.VideoCapture(0)
 
+mark_zuckerberg_image = face_recognition.load_image_file("images/Mark Zuckerberg.jpg")
+mark_zuckerberg_encoding = face_recognition.face_encodings(mark_zuckerberg_image)[0]
+
+bill_gates_image = face_recognition.load_image_file("images/Bill Gates.jpg")
+bill_gates_encoding = face_recognition.face_encodings(bill_gates_image)[0]
+
+jeff_bezos_image = face_recognition.load_image_file("images/Jeff Bezos.jpg")
+jeff_bezos_encoding = face_recognition.face_encodings(jeff_bezos_image)[0]
+
+steve_jobs_image = face_recognition.load_image_file("images/Steve Jobs.png")
+steve_jobs_encoding = face_recognition.face_encodings(steve_jobs_image)[0]
+
+elon_musk_image = face_recognition.load_image_file("images/Elon Musk.jpg")
+elon_musk_encoding = face_recognition.face_encodings(elon_musk_image)[0]
+
 albert_einstein_image = face_recognition.load_image_file("images/albert_einstein.jpg")
 albert_einstein_encoding = face_recognition.face_encodings(albert_einstein_image)[0]
 
@@ -31,6 +46,11 @@ known_face_encoding = [
     marie_curie_encoding,
     mona_lisa_encoding,
     van_gogh_encoding,
+    bill_gates_encoding,
+    elon_musk_encoding,
+    steve_jobs_encoding,
+    mark_zuckerberg_encoding,
+    jeff_bezos_encoding
 ]
 
 known_faces_names = [
@@ -40,6 +60,11 @@ known_faces_names = [
     'marie curie',
     'mona lisa',
     'van gogh'
+    'Bill Gates',
+    'Elon Musk',
+    'Steve Jobs',
+    'Mark Zuckerberg',
+    'Jeff Bezos',
 ]
 
 students = known_faces_names.copy()
