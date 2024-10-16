@@ -1,5 +1,8 @@
 # Facial Recognition Attendance System using Python
 
+https://github.com/user-attachments/assets/9b3e0ffb-7867-434e-9937-12050a310cf0
+
+
 This Python script implements a facial recognition attendance system using OpenCV and face_recognition libraries. It captures video input from the webcam, detects faces in real-time, compares them with preloaded images of known individuals, and logs their attendance in a CSV file with the current date.
 
 ## Features
@@ -25,7 +28,7 @@ This Python script implements a facial recognition attendance system using OpenC
 
 3. Run the script:
    ```
-   python attendance_system.py
+   python faceDetectionAttendance.py
    
    ```
 
